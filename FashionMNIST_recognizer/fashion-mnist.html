@@ -1,0 +1,95 @@
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashion Classifier</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-vis"></script>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+    body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.container {
+    text-align: center;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #333;
+}
+
+.canvas-container {
+    position: relative;
+    border: 8px solid #333;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+canvas {
+    display: block;
+    margin: 0 auto;
+    background: #000;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: #0056b3;
+}
+
+.btn-clear {
+    background: #dc3545;
+}
+
+.btn-clear:hover {
+    background: #c82333;
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <h1>Fashion Classifier</h1>
+        <div class="canvas-container">
+            <canvas id="canvas" width="280" height="280"></canvas>
+        </div>
+        <div class="buttons">
+            <button id="sb" class="btn">Classify</button>
+            <button id="cb" class="btn btn-clear">Clear</button>
+        </div>
+        <img id="canvasimg" style="display:none;">
+    </div>
+    <script src="fashion-data.js" type="module"></script>
+    <script src="functions.js" type="module"></script>
+</body>
+</html>
+
